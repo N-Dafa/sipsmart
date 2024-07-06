@@ -5,4 +5,4 @@ Universitas Bina Sarana Informatika
 ******
 MedSos
 ******
-* <a href="https://x.com/OPbangetOP>Twitter</a>_
+* <a href="https://x.com/OPbangetOP"> Twitter </a>_
