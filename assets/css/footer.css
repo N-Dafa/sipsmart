@@ -1,0 +1,47 @@
+.footer{
+    width: 100%;
+    position: relative;
+    display: grid;
+    background-color: rgb(26, 36, 10);
+}
+/* ======================================= */
+.info-footer{
+    margin-block: 50px;
+    position: relative;
+    margin-inline: 10%;
+}
+.info-footer h3{
+    color: #fff;
+}
+.footer-address{
+    color: rgb(207, 207, 207);
+}
+/* ======================================= */
+.logo-icon{
+    position: relative;
+    display: flex;
+}
+.logo-icon li a{
+    font-size: 40px;
+    margin-inline: 3px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+.logo-icon li i{
+    width: 50px;
+    height: 50px;
+}
+.logo-icon .ig{
+    color: #fff;
+    background: linear-gradient(45deg, #f1cd36, #e75d63,#7838b8);
+}
+.fa-youtube{
+    color: red;
+}
+/* ======================================= */
+iframe{
+    width: 600px;
+    height: 350px;
+    float: right;
+}

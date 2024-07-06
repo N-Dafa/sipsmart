@@ -1,0 +1,148 @@
+#btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 4;
+    left: 10%;
+    top: 0;
+    margin-top: 45px;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+    font-size: 30px;
+    color: #fff;
+    transition: 0.6s;
+}
+#btn:hover{
+    cursor: pointer;
+}
+#btn #garisbar{
+    transition: 0.5s;
+}
+#btn #arrow{
+    transition: 0.5s;
+    rotate: 90deg;
+}
+#btn:hover #garisbar{
+    opacity: 0;
+    rotate: 90deg;
+    font-size: 0px;
+}
+#btn:hover #arrow{
+    opacity: 1;
+    rotate: 270deg;
+}
+#btn i{
+    position: absolute;
+}
+#btn #arrow{
+    opacity: 0;
+}
+
+.llabel.bars #btn{
+    transition: 0.6s;
+    margin-top: 20px;
+    color: #000;
+}
+
+#check:checked ~ .sidebar .user{
+    left: 0;
+    transition: all 800ms ease 0s;
+}
+#check:checked ~ .sidebar{
+    left: 0;
+    transition: all 800ms ease 0s;
+}
+label #cancel{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	z-index: 4;
+	position: fixed;
+}
+#check:checked ~ label #cancel{
+	left: 0;
+	display: block;
+}
+
+
+
+
+
+
+
+.sidebar{
+	z-index: 4;
+	position: fixed;
+	width: 300px;
+    left: -300px;
+	height: 100%;
+	background: #fff;
+	transition: .2s ease-in;
+}
+.sidebar ul li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sidebar ul li a{
+	font-size: 17px;
+    color: #201c15;
+    border-top: 1px solid rgb(210, 210, 210);
+    border-bottom: 1px solid rgb(210, 210, 210);
+    transition: .2s;
+    padding: 10px 20px;
+    display: flex;
+}
+.sidebar-bg{
+    background: url(https://img.freepik.com/free-photo/jasmine-rice_74190-7259.jpg?w=1380&t=st=1668355327~exp=1668355927~hmac=c962656fe6fa0c512a165908e1aee5cdd3c25eca21c37c4ecdad10b9975b6a5d);
+    background-size: cover;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    filter: brightness(50%);
+}
+.sidebar ul #logout{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sidebar ul #logout a{
+    border-color: brown;
+    background-color: rgb(204, 148, 148);
+    position: absolute;
+    bottom: 30px;
+    font-size: 17px;
+}
+.sidebar ul #logout a:hover{
+    background-color: rgba(204, 148, 148, 0.671);
+}
+
+.sidebar a:hover{
+    background: rgb(238, 234, 226);
+	margin-left: 5px;
+}
+.user{
+    z-index: 1000;
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.user .nama{
+    font-size: 20px;
+	margin-top: 15px;
+	font-weight: bold;
+}
+.user i{
+    padding: 10px 0px;
+    font-size: 50px;
+}
+.user .id{
+    font-size: 15px;
+    margin-bottom: 10px;
+}

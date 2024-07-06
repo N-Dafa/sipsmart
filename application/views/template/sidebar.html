@@ -1,0 +1,38 @@
+
+<input type="checkbox" id="check">
+<label for="check" class="llabel">
+    <div class="batal" id="btn"><i class="fa-solid fa-bars" id="garisbar"></i><i class="fa-solid fa-caret-down"id="arrow"></i></div>
+    <div class="a3" id="cancel"></div>
+</label>
+<div class="sidebar">
+    <div class="user">
+        <?php
+        include "database/database.php";
+        $nama = $_SESSION['id'];
+        if ($nama == "") {
+            header("location:login");
+            exit;
+        }
+        elseif($nama=="44441"){
+            $query = mysqli_query($koneksi, "SELECT * FROM dt_admin WHERE id='$nama'");
+            $data = mysqli_fetch_array($query);
+            echo "<div class='nama'>";
+            echo "Admin";
+            echo "</div>";
+            echo "<i class='fa-solid fa-star'></i>";
+            echo "<div class='id'>";
+            echo "********";
+            echo "</div><br>";
+        }
+        ?>
+    </div>
+    <ul>
+        <li id=""><a href="Beranda">Beranda</a></li>
+        <li id=""><a href="hasilpanen">Hasil Panen</a></li>
+        <li id=""><a href="admin">Admin</a></li>
+        <li id=""><a href="hasilpadi">Jual Beli Padi</a></li>
+        <li id=""><a href="contact">Contact</a></li>
+        <li id="logout"><a href="login">LOG OUT</a></li>
+    </ul>
+    <div class="sidebar-bg"></div>
+</div>
