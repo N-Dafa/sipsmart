@@ -15,15 +15,17 @@ class admin extends CI_Controller{
 		$this->load->view('view-input');
 	}
 	function tambah_aksi(){
+		$id = $this->input->post('id');
 		$nama = $this->input->post('nama');
 		$nim = $this->input->post('nim');
 		$pass = $this->input->post('pass');
-		$id = $this->input->post('id');
+		$h_pass = md5($pass);
+		$h_nim = md5($nim);
 		$data = array(
 			'id' => $id,
 			'nama' => $nama,
-			'nim' => $nim,
-			'pass' => $pass
+			'nim' => $h_nim,
+			'pass' => $h_pass
 			);
 		$this->m_data->input_data($data,'dt_admin');
 		redirect('admin');

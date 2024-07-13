@@ -51,7 +51,7 @@ $_SESSION['id'] = 0;
             $_SESSION['id'] = $id;
             $_SESSION['back'] = $id;
             $_SESSION['mode'] = '';
-            header("location:fp_user");
+            header("location:user");
             exit;
         } elseif ($id == "") {
             echo "<input onclick='salah()'><script>function salah(){confirm('ID Tidak Ditemukan')}</script>";
@@ -62,6 +62,6 @@ $_SESSION['id'] = 0;
     ?>
     </div>
     <div class="loader"></div>
-	<script src="assets/js/loading.js"></script>
+    <script src="assets/js/loading.js"></script>
 </body>
 </html>

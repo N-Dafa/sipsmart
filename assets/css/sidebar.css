@@ -107,19 +107,19 @@ label #cancel{
     left: 0;
     filter: brightness(50%);
 }
-.sidebar ul #logout{
+.sidebar ul li #logout{
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.sidebar ul #logout a{
+.sidebar ul li #logout{
     border-color: brown;
     background-color: rgb(204, 148, 148);
     position: absolute;
     bottom: 30px;
     font-size: 17px;
 }
-.sidebar ul #logout a:hover{
+.sidebar ul li #logout:hover{
     background-color: rgba(204, 148, 148, 0.671);
 }
 

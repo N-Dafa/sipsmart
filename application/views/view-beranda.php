@@ -94,7 +94,7 @@ if ($_SESSION["back"] == 0){header("location:http://localhost/fp3/login");}
                         <div class="penj-pertanian">
                             <header>PERTANIAN</header>
                             <p class="penj">Sebagai Negara Agraris, sektor pertanian memegang peranan yang cukup penting dalam kehidupan perekonomian masyarakat Indonesia, khususnya di Desa Kerohok Kabupaten Landak. Pertanian merupakan suatu kegiatan para petani yang memanfaatkan sumber daya hayati dengan cara bertanam pada tanah atau media lahan lainnya guna menghasilkan kebutuhan pangan bagi kehidupan manusia.</p>
-                            <div class="more">Lebih Banyak</div>
+                            <div class="more">Lihat Lebih Banyak</div>
                             <div class="border-opac"><p class="penj_lebih"><img src="assets/img/foto1.jpg">Penjelasan Lebih Lanjut<br>Sistem Informasi pertanian adalah suatu cara yang dilakukan untuk memberi informasi pertanian yang penting dan akurat datang ada pada suatu daerah tertentu. Strategi pengembangan sistem informasi pertanian perlu dilakukan dengan berbagai cara salah satunya dengan pemanfaatan internet, sehingga setiap orang dapat mengakses informasi pertanian yang ada didalamnya tidak terbatas waktu dan ruang. Dengan sistem informasi pertanian berbasis website diharapkan dapat memberikan informasi yang lebih detail dan mampu menjawab persoalan yang ada dalam transfer informasi pertanian</p></div>
                         </div>
                     </div>

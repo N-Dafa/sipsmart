@@ -32,7 +32,14 @@
         <li id=""><a href="admin">Admin</a></li>
         <li id=""><a href="hasilpadi">Jual Beli Padi</a></li>
         <li id=""><a href="contact">Contact</a></li>
-        <li id="logout"><a href="login">LOG OUT</a></li>
+        <li><button onclick="btn()" id="logout">LOG OUT</button></li>
     </ul>
     <div class="sidebar-bg"></div>
 </div>
+<script>
+    function btn(){
+        if (confirm('Yakin Log Out?')) {
+            window.location.href = "http://localhost/login/";
+        }
+    }
+</script>
