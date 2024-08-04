@@ -1,4 +1,7 @@
-# Biodata
+# Profile
+Nama : Awang Dafa Faturiansyah
+NIM  : 12210991
+
 Tugas Akhir<br> 
 Universitas Bina Sarana Informatika
 Kampus Kota Pontianak<br>
