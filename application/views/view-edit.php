@@ -11,14 +11,14 @@
 </div>
 <div style="width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;">
 <?php foreach($dt_admin as $u){ ?>
-	<form action="<?php echo base_url(). 'hasilpanen/update'; ?>" method="post">
+	<form action="<?php echo base_url(). 'admin/update'; ?>" method="post">
 		<table class="input" style="transform: scaleY(1); opacity: 1; pointer-events: all; user-select: none;">
             <td class="text-light" style="border-bottom: 1px solid #c3c3c397; padding: 10px 0px 5px 16px; font-size: 20px;" colspan="2">Ubah Data Panen</td>
             <td><td></td></td>
 			<tr>
 				<td class="text-light">Nama</td>
 				<td>
-					<input type="hidden" name="nim" value="<?php echo $u->nim ?>">
+					<input type="hidden" name="nim" value="<?php echo $u->id_admin ?>">
 					<input type="text" name="nama" value="<?php echo $u->nama ?>">
 				</td>
 			</tr>

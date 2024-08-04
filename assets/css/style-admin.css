@@ -26,11 +26,55 @@ body{
     padding-left: 100px;
 }
 /* ======================================= */
-table {
-    border-collapse: collapse;
+
+
+.isi{
+    position: relative;
+    width: 100%;
+    padding-inline: 10%;
 }
-.dp1{
-    margin-left: 10%;
+.isi-body{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+.kolom_input{
+    position: relative;
+    width: 200px;
+    height: max-content;
+    margin-inline: 20px;
+}
+.data_member{
+    width: 150px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 20px 20px;
+    font-size: 20px;
+    margin-block: 10px;
+}
+
+
+.table-table{
+    position: absolute;
+    right: 0;
+    width: 85%;
+    background-color: #ffffff;
+    color: #000;
+    padding: 20px;
+}
+.table-table th{
+    padding: 10px 0px 10px 5px;
+    text-align: left;
+    background: #98aef3a8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Doris', sans-serif;
+}
+.table-table td{
+    border-top: 1px solid #0000004a;
+    height: 60px;
+    padding-left: 5px;
+    text-align: left;
 }
 .table-table a{
     user-select: none;
@@ -41,10 +85,16 @@ table {
     text-align: center;
     margin: 10px 5px 10px 5px;
 }
-.dp1 a:hover{
+.table-table a:hover{
     background-color: rgba(255, 255, 255, 0.163);
 }
+#aksi-table{
+    width: 180px;
+}
+
+
 .tambah-tengah{
+    z-index: 4;
     top: 0;
     left: 0;
     width: 100%;
@@ -68,7 +118,7 @@ table {
     box-shadow: 0px 0px 3px white;
     opacity: 0;
 }
-.input .text-light{
+.input .text{
     padding-left: 5%;
 }
 .input button{
@@ -113,107 +163,38 @@ input{
     opacity: 1;
     transition: 0.5s;
 }
-.dp1 .edit{
-    background-color: #67b1e2;
-    color: #000;
-}
-.dp1 .edit:hover{
-    background-color: #74c6fd;
-}
-.dp1 .hapus{
-    background-color: #d46161;
-    color: #000;
-}
-.dp1 .hapus:hover{
-    background-color: #f37171;
-}
-.table-table{
-    background-color: #ffffff;
-    color: #000;
-    margin-left: 15%;
-    width: 70%;
-}
-.table-table tr th{
-    border:1px solid;
-    padding-left: 5px;
-    text-align: left;
-}
-.table-table tr td{
-    height: 60px;
-    border:1px solid;
-    padding-left: 5px;
-    text-align: left;
-}
-#atas-table{
-    width: 180px;
-}
-/* ======================================= */
-.wall{
-    background: rgb(238, 238, 238);
-    background-size: cover;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-left: 100px solid rgb(150, 209, 55);
-}
-.atas{
-    position: relative;
-    z-index: 100;
-}
-
-#total-member{
-    font-family: 'Roboto',sans-serif;
-    width: 200px;
-    height: 80px;
-    font-size: 13px;
-    background: white;
-    box-shadow: 0px 10px 30px rgb(207, 207, 207);
-    border-radius: 7px;
-    align-items: center;
-    display: grid;
-    margin: 0px 20px 20px 20px;
-    padding-inline: 10px;
-}
-#total-member p{
-    font-size: 25px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-#total-member span{
-    margin-top: -10px;
-}
-
 #close{
     top: 0;
     left: 0;
-    position: fixed;
-    background: #000000a2;
-    transition: opacity 0.5s;
-    opacity: 0;
-    pointer-events: none;
     width: 100%;
     height: 100vh;
+    position: fixed;
+    background: #000000a2;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    opacity: 0;
+    z-index: 4;
 }
-#centang:checked ~ label #close{
+.input.show{
+    transform: translateY(0);
+    pointer-events: initial;
     opacity: 1;
-    pointer-events: all;
+    transition: 0.5s;
 }
 #open{
-    pointer-events: all;
     color: #000000;
     background: none;
     border: 2px solid rgb(150, 209, 55);
     font-family: "montserrat",sans-serif;
     padding: 12px 20px;
+    width: 150px;
     cursor: pointer;
-    position: absolute;
     transition: color 0.4s linear;
+    position: relative;
     font-size: 17px;
     text-align: center;
-    margin: 20px;
-    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #open::before{
     top: 0;
@@ -229,11 +210,38 @@ input{
     transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
 }
 #open::before{
-transform: scaleX(0);
+  transform: scaleX(0);
 }
 #open:hover::before{
-transform: scaleX(1);
+  transform: scaleX(1);
 }
-.kolom{
-    display: flex;
+#centang:checked ~ label #close{
+    opacity: 1;
+    pointer-events:all;
+}
+
+.isi-body .edit{
+    background-color: #67b1e2;
+    color: #ffffff;
+}
+.isi-body .edit:hover{
+    background-color: #74c6fd;
+}
+.isi-body .hapus{
+    background-color: #d46161;
+    color: #ffffff;
+}
+.isi-body .hapus:hover{
+    background-color: #f37171;
+}
+/* ======================================= */
+.wall{
+    background: rgb(238, 238, 238);
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-left: 100px solid rgb(150, 209, 55);
 }

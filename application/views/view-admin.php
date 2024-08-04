@@ -1,8 +1,5 @@
 <?php
 include "database/database.php";
-if ($_SESSION["back"] == 0){header("location:http://localhost/fp3/login");}
-?>
-<?php
 $get1 = mysqli_query($koneksi, "SELECT * FROM user");
 $getmember1 = mysqli_num_rows($get1);
 
@@ -26,34 +23,38 @@ $getmember2 = mysqli_num_rows($get2);
 <body>
     <div class="wall"></div>
     <div class="atas">
-        <?php include 'template/sidebar.html' ?>
+        <?php include 'assets/template/sidebar.html' ?>
         <section id="header"></section>
-        <?php include 'template/header-admin.html' ?>
+        <?php include 'assets/template/header-admin.html' ?>
         <div class="headup"></div>
         <div class="isi">
-            <section class="dp1">
-                <input type="checkbox" id="centang">
-                    <label for="centang">
+            <section class="isi-body">
+                <div class="kolom_input">
+                    <input type="checkbox" id="centang">
+                    <label for="centang" id="tambah-data">
                         <div id="open">Tambah<br>Admin Baru</div>
                         <div id="close"></div>
                     </label>
-                <div class="kolom">
-                    <div id="total-member" style="margin-left: 11%;"><p><?php echo number_format($getmember1,0,',','.');?></p><span>Member Regis</span></p></div>
-                    <div id="total-member" style="margin-left: 0;"><p><?php echo $getmember2;?></p><span>Admin</span></p></div>
+                    <div class="kolom">
+                        <ul>
+                            <li><div class="data_member"><p>[<?php echo number_format($getmember1,0,',','.');?>]</p><span>Member</span></p></div></li>
+                            <li><div class="data_member"><p>[<?php echo $getmember2;?>]</p><span>Admin</span></p></div></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="tambah-tengah">
                     <form action="<?php echo base_url() . 'admin/tambah_aksi'; ?>" method="post">
                         <table class="input">
-                            <input id="admin" type="text" name="id" value="44441" style="display: none;">
-                            <td class="text-light" style="border-bottom: 1px solid #c3c3c397; padding: 10px 0px 5px 16px; font-size: 20px;" colspan="2">Tambah Admin</td>
+                            <input id="admin" type="text" name="id" value="admin" style="display: none;">
+                            <td class="text" style="border-bottom: 1px solid #c3c3c397; padding: 10px 0px 5px 16px; font-size: 20px;" colspan="2">Tambah Admin</td>
                             <tr><td></td></tr>
                             <tr>
-                            <td class="text-light">Nama</td>
+                            <td class="text">Nama</td>
                             </tr>
                             <tr>
                                 <td><input type="text" name="nama" autocomplete="off"></td>
                             </tr>
-                            <td class="text-light">password</td>
+                            <td class="text">password</td>
                             <tr>
                                 <td><input type="text" name="pass" autocomplete="off"></td>
                             </tr>
@@ -67,23 +68,25 @@ $getmember2 = mysqli_num_rows($get2);
                         </table>
                     </form>
                 </div>
+
+
                 <table class="table-table">
                     <tr id="atas">
-                        <th style="width: 5px; padding-right: 3px;">No</th>
+                        <th style="width:3%;">No</th>
                         <th>Nama</th>
                         <th>Password</th>
-                        <th id="atas-table">Action</th>
+                        <th id="aksi-table">Action</th>
                     </tr>
                     <?php
                     $no = 1;
                     foreach ($dt_admin as $row) { ?>
                     <tr>
-                        <td widtd="5%"><?php echo $no++; ?></td>
+                        <td><?php echo $no++; ?></td>
                         <td><?php echo $row->nama; ?></td>
                         <td><?php echo $row->pass; ?></td>
                         <td id="action">
-                            <a href="<?php echo base_url(); ?>admin/hapus/<?php echo $row->nim; ?>" class="hapus">Hapus</a>
-                            <a href="<?php echo base_url(); ?>admin/edit/<?php echo $row->nim; ?>" class="edit">Edit</a>
+                            <a href="<?php echo base_url(); ?>admin/hapus/<?php echo $row->id_admin; ?>" class="hapus"><i class="fa-solid fa-trash"></i></a>
+                            <a href="<?php echo base_url(); ?>admin/edit/<?php echo $row->id_admin; ?>" class="edit"><i class="fa-solid fa-file-pen"></i> Edit</a>
                         </td>
                     </tr>
                     <?php } ?>

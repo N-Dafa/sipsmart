@@ -6,18 +6,18 @@
         $no = 1;
         $ambil = mysqli_query($koneksi, "SELECT * FROM user");
         echo "
-        <td>No</td>
-        <td>nama</td>
         <td>id</td>
+        <td>ID User</td>
+        <td>nama</td>
         <td>password</td>
         <td>Hapus</td>
         <tr>";
         while ($tampil = mysqli_fetch_array($ambil)) {
             echo "
             <tr>
-                <td>$no</td>
-                <td>$tampil[nama]</td>
                 <td>$tampil[id]</td>
+                <td>$tampil[id_user]</td>
+                <td>$tampil[nama]</td>
                 <td>$tampil[pass]</td>
                 <td><a href='?kode=$tampil[nama]'>Hapus</a></td>
             </tr>";

@@ -17,11 +17,11 @@ class hasilpadi extends CI_Controller{
 	function upload(){
 		$namafile = $_FILES['foto']['name'];
 		$tmpName = $_FILES['foto']['tmp_name'];
-		move_uploaded_file($tmpName, 'assets/img/' . $namafile);
+		move_uploaded_file($tmpName, 'assets/upload/'.$namafile);
 		return $namafile;
 	}
 	function tambah_aksi(){
-        $id = $this->input->post('id');
+        $id = $this->input->post('id_padi');
 		$tanggal = $this->input->post('tanggal');
 		$deskripsi = $this->input->post('deskripsi');
 		$alamat = $this->input->post('alamat');
@@ -32,40 +32,49 @@ class hasilpadi extends CI_Controller{
 			'tanggal' => $tanggal,
 			'deskripsi' => $deskripsi,
 			'alamat' => $alamat,
-			'harga' => $harga,
+			'harga_beli' => $harga,
 		);
 		$where = array(
-			'id' => $id
+			'id_padi' => $id
 		);
 		$this->m_padi->input_data($data,'padi');
 		redirect('hasilpadi');
 	}
     function hapus($id){
-		$where = array('id' => $id);
+		$where = array('id_padi' => $id);
 		$this->m_padi->hapus_data($where,'padi');
 		redirect('hasilpadi');
 	}
     function edit($id){
-        $where = array('id' => $id);
+        $where = array('id_padi' => $id);
         $data['padi'] = $this->m_padi->edit_data($where,'padi')->result();
         $this->load->view('padi-edit',$data);
     }
     function update(){
-        $id = $this->input->post('id');
+        $id = $this->input->post('id_padi');
         $tanggal = $this->input->post('tanggal');
         $deskripsi = $this->input->post('deskripsi');
         $alamat = $this->input->post('alamat');
-		$harga = $this->input->post('harga');
+		$harga = $this->input->post('harga_beli');
 		$foto = $this->upload('foto');
-        $data = array(
-			'foto' => $foto,
-			'tanggal' => $tanggal,
-            'deskripsi' => $deskripsi,
-            'alamat' => $alamat,
-			'harga' => $harga,
-        );
+        if($_FILES['foto']['name']==null){
+			$data = array(
+				'tanggal' => $tanggal,
+				'deskripsi' => $deskripsi,
+				'alamat' => $alamat,
+				'harga_beli' => $harga,
+			);
+		}else{
+			$data = array(
+				'foto' => $foto,
+				'tanggal' => $tanggal,
+				'deskripsi' => $deskripsi,
+				'alamat' => $alamat,
+				'harga_beli' => $harga,
+			);
+		}
         $where = array(
-            'id' => $id
+            'id_padi' => $id
         );
         $this->m_padi->update_data($where,$data,'padi');
         redirect('hasilpadi');

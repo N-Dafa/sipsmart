@@ -9,23 +9,27 @@ body{
     cursor: default;
 	font-family: 'Roboto',sans-serif;
 }
-center p{
-    position: relative;
-    z-index: 1000;
-    color: #fff;
-    line-height: 30px;
+nav{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+nav .wordkey{
+    margin: 5px;
+    color: #ffffff;
 }
 header{
     width: 400px;
     height: auto;
-    background: rgb(238, 234, 226);
     position: relative;
-    z-index: 1000;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px black;
     display: grid;
-    margin-top: 300px;
     padding-bottom: 20px  ;
+    background: rgb(238, 234, 226);
+    box-shadow: 0px 0px 5px black;
+    transition: .2s;
 }
 header img{
     position: sticky;
@@ -81,39 +85,60 @@ header img{
 .regis:hover{
     background: rgb(251, 203, 152);
 }
-.wall{
-    background: url(https://img.freepik.com/free-photo/piece-golden-rice-rice-waiting-be-harvested_1205-11336.jpg?w=1380&t=st=1668351517~exp=1668352117~hmac=f0eef016bfc4224e1e08bf9a93136e08c95c04895b0f7eb7cdd98ad191c1ffaf);
-    background-size: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-.walls{
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.619);
-}
 .kotak i {
     cursor: pointer;
 }
 .kotak i:hover{
     color: rgb(145, 145, 145);
 }
-.notif{
-    top: 0;
-    background-color: #f8d7da;
+.notif_center{
     width: 100%;
-    z-index: 10;
-    color: #842029;
-    text-align: center;
-    line-height: 70px;
-    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+/* NOTIF */
+.notif{
+    position: fixed;
+    top: 20px;
+    width: 400px;
+    padding-block: 30px;
+    border-radius: 10px;
     font-size: 20px;
+    text-align: center;
+    background-color: #f8d7da;
+    color: #842029;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.hide{
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 .notif i{
     margin-right: 10px;
+}
+.fade-out {
+    opacity: 0;
+}
+
+/* notif warna */
+.valid{
+    background-color: #aceb6dc4;
+    color: #4c7c1c;
+}
+.invalid{
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+/* BACKGROUND */
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.619);
+    z-index: -1;
+    pointer-events: none;
 }

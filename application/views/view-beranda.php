@@ -1,7 +1,3 @@
-<?php
-include "database/database.php";
-if ($_SESSION["back"] == 0){header("location:http://localhost/fp3/login");}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +14,9 @@ if ($_SESSION["back"] == 0){header("location:http://localhost/fp3/login");}
 </head>
 <body loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     <div class="atas">
-        <?php include 'template/sidebar.html' ?>
+        <?php include 'assets/template/sidebar.html' ?>
         <section id="header"></section>
-        <?php include 'template/header-admin.html' ?>
+        <?php include 'assets/template/header-admin.html' ?>
         <div class="container">
             <div class="sliders">
                 <div class="slider">
@@ -102,7 +98,7 @@ if ($_SESSION["back"] == 0){header("location:http://localhost/fp3/login");}
             </section>
             <div class="penghias kanan" style="margin-bottom: 50px;"></div>
         </div>
-        <?php include 'template/footer.html' ?>
+        <?php include 'assets/template/footer.html' ?>
     </div>
     <div class="wall"></div>
     <div class="loader"></div>

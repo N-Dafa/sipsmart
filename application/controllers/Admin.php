@@ -19,29 +19,26 @@ class admin extends CI_Controller{
 		$nama = $this->input->post('nama');
 		$nim = $this->input->post('nim');
 		$pass = $this->input->post('pass');
-		$h_pass = md5($pass);
-		$h_nim = md5($nim);
 		$data = array(
 			'id' => $id,
 			'nama' => $nama,
-			'nim' => $h_nim,
-			'pass' => $h_pass
+			'id_admin' => $nim,
+			'pass' => $pass
 			);
 		$this->m_data->input_data($data,'dt_admin');
 		redirect('admin');
 	}
     function hapus($nim){
-		$where = array('nim' => $nim);
+		$where = array('id_admin' => $nim);
 		$this->m_data->hapus_data($where,'dt_admin');
 		redirect('admin');
 	}
     function edit($nim){
-        $where = array('nim' => $nim);
+        $where = array('id_admin' => $nim);
         $data['dt_admin'] = $this->m_data->edit_data($where,'dt_admin')->result();
         $this->load->view('view-edit',$data);
     }
     function update(){
-        $id = $this->input->post('id');
         $nama = $this->input->post('nama');
         $nim = $this->input->post('nim');
         $pass = $this->input->post('pass');
@@ -50,7 +47,7 @@ class admin extends CI_Controller{
             'pass' => $pass
         );
         $where = array(
-            'nim' => $nim
+            'id_admin' => $nim
         );
         $this->m_data->update_data($where,$data,'dt_admin');
         redirect('admin');

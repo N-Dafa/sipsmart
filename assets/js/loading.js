@@ -5,3 +5,12 @@ window.addEventListener("load", () => {
         document.body.removeChild("loader");
     })
 })
+
+
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".load-icon");
+    loader.classList.add("load-icon-hidden");
+    loader.addEventListener("transitionend", () => {
+        document.body.removeChild("load-icon");
+    })
+})

@@ -2,100 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>...</title>
-<style>
-body{
-    margin: 0;
-    padding: 0;
-}
-section{
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background-color: black;
-}
-#border{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-#border::before{
-    content: "";
-    background-image: conic-gradient(
-        #fe0000,
-        #fff001,
-        #00ce01,
-        #01ffff,
-        #0000fe,
-        #ff01ff,
-        #fe0000
+    <title>Animasi Teks Berganti ke Arah Bawah</title>
+    <style>/* styles.css */
 
-    );
-    width: 250%;
-    height: 250%;
-    position: absolute;
-    border: 1px solid white;
-
-    animation: rotate 3s linear infinite;
-}
-.text{
-    content: "";
-    font-size: 40px;
-    width: 99%;
-    height: 98.5%;
-    background: black;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-#border,
-.text{
-    border-radius: 10px;
-}
-@keyframes rotate{
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
-}
-button{
-    top: -100px;
-    position: absolute;
-}
-</style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        
+        .text-container {
+            width: 300px;
+            height: 50px;
+            overflow: hidden;
+            border: 2px solid #333;
+            position: relative;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+            button{
+                width: 100%;
+                border: 1px solid transparent;
+                font-style: normal;
+                text-decoration: none;
+            }
+        }
+        
+        .text-item {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #333;
+            font-size: 18px;
+        }
+        
+    </style>
 </head>
 <body>
-    <section id="loading">
-        <div id="border">
-            <div class="text">
-                <form style="opacity: 0.1;" action="" method="post">
-                <input type="text" name="id" autofocus size="1" autocomplete="off" style="font-size: 20px;"><button type="submit" name="btn">.</button>
-                </form>
-                <?php
-                if (isset($_POST['btn'])) {
-                    $id = $_POST['id'];
-                    if ($id == 1) {
-                        header("location:login");
-                        exit;
-                    }
-                    elseif ($id == 2) {
-                        header("location:https://docs.google.com/presentation/d/1Snse4XEATDJv7JtS57zI0bh4BgQi4RuB/edit?usp=drivesdk&ouid=107874785746122528925&rtpof=true&sd=true");
-                        exit;
-                    }
-                }
-                ?>
-            </div>
+    <div class="text-container">
+        <div class="text-slide">
+            <button class="text-item">Teks Pertama</button>
+            <button class="text-item">Teks Kedua</button>
+            <button class="text-item">Teks Ketiga</button>
+            <button class="text-item">Teks Keempat</button>
+            <button class="text-item">Teks Kelima</button>
         </div>
-    </section>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const textSlide = document.querySelector('.text-slide');
+    const textItems = document.querySelectorAll('.text-item');
+    const totalItems = textItems.length;
+    let currentIndex = 0;
+    
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        textSlide.style.transform = `translateY(-${currentIndex * 50}px)`;
+    }, 2000); // 2000ms atau 2 detik untuk berganti teks
+});
+
+    </script>
 </body>
 </html>

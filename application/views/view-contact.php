@@ -1,9 +1,3 @@
-<?php
-include "database/database.php";
-if ($_SESSION["back"] == 0){
-    header("location:http://localhost/fp3/login");
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +13,14 @@ if ($_SESSION["back"] == 0){
 </head>
 <body>
     <div class="atas">
-        <?php include 'template/sidebar.html' ?>
+        <?php include 'assets/template/sidebar.html' ?>
         <section id="header"></section>
-        <?php include 'template/header-admin.html' ?>
+        <?php include 'assets/template/header-admin.html' ?>
         <div class="headup"></div>
         <section id="see">
             <div class="s1">
                 <div class="slide1">
-                    <img src="assets/img/awang.png">
+                    <img src="assets/img/kontak.png">
                     <div class="dp1">
                         <header>Awang Dafa Faturiansyah</header>
                         <p class="font-weight-bold">

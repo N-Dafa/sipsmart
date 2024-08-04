@@ -32,21 +32,21 @@ class hasilpadi_user extends CI_Controller{
 			'tanggal' => $tanggal,
 			'deskripsi' => $deskripsi,
 			'alamat' => $alamat,
-			'harga' => $harga,
+			'harga_beli' => $harga,
 		);
 		$where = array(
-			'id' => $id
+			'id_padi' => $id
 		);
 		$this->m_padi->input_data($data,'padi');
 		redirect('hasilpadi');
 	}
     function hapus($id){
-		$where = array('id' => $id);
+		$where = array('id_padi' => $id);
 		$this->m_padi->hapus_data($where,'padi');
 		redirect('hasilpadi');
 	}
     function edit($id){
-        $where = array('id' => $id);
+        $where = array('id_padi' => $id);
         $data['padi'] = $this->m_padi->edit_data($where,'padi')->result();
         $this->load->view('padi-edit',$data);
     }
@@ -62,10 +62,10 @@ class hasilpadi_user extends CI_Controller{
 			'tanggal' => $tanggal,
             'deskripsi' => $deskripsi,
             'alamat' => $alamat,
-			'harga' => $harga,
+			'harga_beli' => $harga,
         );
         $where = array(
-            'id' => $id
+            'id_padi' => $id
         );
         $this->m_padi->update_data($where,$data,'padi');
         redirect('hasilpadi');
@@ -74,7 +74,7 @@ class hasilpadi_user extends CI_Controller{
         redirect('hasilpadi_user');
 	}
 	function pesan($id){
-        $where = array('id' => $id);
+        $where = array('id_padi' => $id);
         $data['padi'] = $this->m_padi->pesan_data($where,'padi')->result();
         $this->load->view('user/view-pesan',$data);
 	}

@@ -1,3 +1,7 @@
+<?php
+include "database/database.php";
+if ($_SESSION["back"] == 0){header("location:http://localhost/sipsmart");}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <title>Web Pertanian</title>
+    <title>Input Padi</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style-padi.css">
 </head>

@@ -1,8 +1,17 @@
+<?php
+include "database/database.php";
+if ($_SESSION["back"] == 0){header("location:http://localhost/sipsmart");}
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Pertanian</title>
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style-padi.css">
+	<link href="assets/img/icon.png" rel="shortcut icon">
+    <script src="https://kit.fontawesome.com/5b2b770845.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <title>Edit Padi</title>
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style-panen.css">
 </head>
 <body>
 <div class="wall">
@@ -18,8 +27,7 @@
 			<tr>
 				<td class="text">Gambar</td>
 				<td>
-					<input type="hidden" name="id" value="<?php echo $u->id ?>">
-				    <input type="hidden" name="fotolama" value="<?php echo $u->foto ?>">
+					<input type="hidden" name="id_padi" value="<?php echo $u->id_padi ?>">
 					<input type="file" name="foto">
 				</td>
 			</tr>
@@ -39,7 +47,7 @@
 			</tr>
 			<tr>
 				<td class="text">Harga</td>
-				<td><input type="text" name="harga" value="<?php echo $u->harga ?>"></td>
+				<td><input type="text" name="harga_beli" value="<?php echo $u->harga_beli ?>"></td>
 			</tr>
 			<tr>
 				<td><hr></td>

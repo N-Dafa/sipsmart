@@ -10,6 +10,10 @@ body{
     position: absolute;
     display: none;
 }
+.pemanis{
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 /* ======================================= */
 .head{
     padding-inline: 10%;
@@ -31,14 +35,49 @@ body{
     padding-left: 100px;
 }
 /* ======================================= */
-#tambah-data{
+.isi{
+    padding-inline: 10%;
+}
+.isi-body{
+    position: relative;
     display: flex;
+    width: 100%;
 }
-table {
-    border-collapse: collapse;
+.kolom_input{
+    position: relative;
+    width: 200px;
+    height: max-content;
+    margin-inline: 20px;
 }
-.dp1{
-    margin-left: 10%;
+
+.table-table{
+    right: 0;
+    width: 85%;
+    background-color: #ffffff;
+    color: #000;
+    padding: 20px;
+    button{
+        border: 0;
+        padding: 5px 7px;
+        border-radius: 6px;
+        background: #5166a7da;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+.table-table th{
+    padding: 10px 0px 10px 5px;
+    text-align: left;
+    background: #98aef3a8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Doris', sans-serif;
+}
+.table-table td{
+    border-top: 1px solid #0000004a;
+    height: 60px;
+    padding-left: 5px;
+    text-align: left;
 }
 .table-table a{
     user-select: none;
@@ -49,9 +88,12 @@ table {
     text-align: center;
     margin: 10px 5px 10px 5px;
 }
-.dp1 a:hover{
+.table-table a:hover{
     background-color: rgba(255, 255, 255, 0.163);
 }
+
+
+
 .tambah-tengah{
     top: 0;
     left: 0;
@@ -62,6 +104,7 @@ table {
     position: fixed;
     display: flex;
     pointer-events: none;
+    z-index: 10;
 }
 .input{
     background-color: #212529;
@@ -131,6 +174,7 @@ input{
     pointer-events: none;
     transition: opacity 0.5s;
     opacity: 0;
+    z-index: 9;
 }
 .input.show{
     transform: translateY(0);
@@ -151,6 +195,7 @@ input{
     font-size: 17px;
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 #open::before{
     top: 0;
@@ -175,43 +220,32 @@ input{
     opacity: 1;
     pointer-events:all;
 }
-.dp1 .edit{
+.isi-body .edit{
     background-color: #67b1e2;
-    color: #000;
+    color: #ffffff;
 }
-.dp1 .edit:hover{
+.isi-body .edit:hover{
     background-color: #74c6fd;
 }
-.dp1 .hapus{
+.isi-body .hapus{
     background-color: #d46161;
-    color: #000;
+    color: #ffffff;
 }
-.dp1 .hapus:hover{
+.isi-body .hapus:hover{
     background-color: #f37171;
-}
-.table-table{
-    top: 0;
-    position: absolute;
-    background-color: #ffffff;
-    color: #000;
-    margin-left: 10%;
-    width: 70%;
-    z-index: -1;
-}
-.table-table tr th{
-    border:1px solid;
-    padding-left: 5px;
-    text-align: left;
-}
-.table-table tr td{
-    height: 60px;
-    border:1px solid;
-    padding-left: 5px;
-    text-align: left;
 }
 #atas-table{
     width: 180px;
 }
+
+.data_panen{
+    width: 150px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 20px 20px;
+    font-size: 20px;
+}
+
 /* ======================================= */
 .wall{
     background: rgb(238, 238, 238);
@@ -236,21 +270,69 @@ input{
     position: relative;
     z-index: 100;
 }
-#print-laporan{
-    color: #000000;
-    background: #fff;
-    font-family: "montserrat",sans-serif;
-    padding: 6px 20px;
-    width: 150px;
-    height: 100px;
+.print-laporan{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: #96d137;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 17px;
     cursor: pointer;
-    transition: color 0.4s linear;
-    position: relative;
-    font-size: 14px;
-    text-align: center;
-    border-radius: 7px;
-    border: 2px solid #5198c7;
 }
-#print-laporan:hover{
+.print-laporan:hover{
     background-color: #5198c7;
+}
+.body_cari
+{
+    margin-inline: 10%;
+}
+.body_cari{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    border-left: 20px solid rgb(148, 170, 236);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(86, 125, 244);
+    align-items: center;
+    margin-bottom: 20px;
+    width: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.292);
+}
+.body_cari h1{
+    right: 11%;
+    position: absolute;
+    font-size: 35px;
+    font-family: 'Doris', sans-serif;
+    color: white;
+    transition: all .4s ease;
+}
+.body_cari #logo-cari{
+    font-size: 23px;
+    color: rgb(124, 124, 124);
+    z-index: 1;
+    left: 35px;
+    position: relative;
+}
+.body_cari #pencarian{
+    background-color: rgba(255, 255, 255, 0.396);
+    width: auto;
+    font-size: 25px;
+    border: 0;
+    border-radius: 25px;
+    padding: 7px 10px 7px 60px;
+    transition: all .4s ease;
+    position: absolute;
+    margin-top: -38px;
+    left: 7%;
+}
+.body_cari #submit{
+    display: none;
+}
+@media (max-width: 950px){
+    .body_cari h1{
+        opacity: 0;
+        margin-right: 230px;
+    }
 }

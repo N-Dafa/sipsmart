@@ -1,159 +1,90 @@
+<?php
+include "database/database.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="assets/img/icon.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5b2b770845.js" crossorigin="anonymous"></script>
-    <title>orderan</title>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-decoration: none;
-        box-sizing: border-box;
-    }
-    .head{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .header{
-        width: 100%;
-        height: 150px;
-        background-color: #1a1a1aab;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .bar{
-        margin-inline: 20px;
-        width: 1100px;
-    }
-    .header a{
-        display: flex;
-        align-items: center;
-        list-style: none;
-        text-decoration: none;
-        width: min-content;
-        height: 60px;
-        width: 120px;
-        padding: 0px 15px;
-        font-size: 40px;
-        border-radius: 40px;
-        border: 1px solid;
-        background-color: rgb(150, 209, 55);
-        color: black;
-        transition: .4s;
-        justify-content: right;
-    }
-    .header i{
-        transition: .2s;
-    }
-    .header a:hover i{
-        padding-right: 60px;
-    }
-    .table{
-        font-family: "montserrat",sans-serif;
-        margin: 20px 20px 20px 20px;
-        padding: 20px;
-        position: relative;
-        width: 1100px;
-        height: max-content;
-        background-color: #fff;
-        font-size: 20px;
-        padding-bottom: 10px;
-    }
-    .table .isi{
-        border-collapse: collapse;
-    }
-    .table #atas th{
-        height: 50px;
-        border-bottom: 1px solid;
-    }
-    .table #bawah td{
-        height: 40px;
-        border-bottom: 1px solid;
-    }
-    .table #bawah input{
-        width: max-content;
-        height: 30px;
-        padding-inline: 10px;
-        font-size: 15px;
-        background-color: rgb(150, 209, 55);
-    }
-    .wall{
-        background: rgb(245, 245, 245);
-        background-size: cover;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-    #atas th{
-        text-align: left;
-    }
-    #deskripsi{
-        width: 200px;
-        margin-right: 10px;
-    }
-    .deskripsi{
-        height: 25px;
-        display: -webkit-box;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        overflow: hidden;
-    }
-</style>
+    <title>Detail Pesanan</title>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/order.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/pencarian.css">
 </head>
 <body>
-<div class="wall"></div>
+    <div class="wall"></div>
     <div class="head">
         <div class="header">
             <div class="bar">
                 <a class="a" href="<?php echo base_url(). 'hasilpadi/batal'; ?>"><i class="fa-solid fa-angle-left"></i></a>
             </div> 
+            <h2>Detail Pesanan</h2>
         </div>
     </div>
-    <div style="width: 100%; display: grid; align-items: center; justify-content: center;">
-        <table class="table">
+    <div class="header-body">
+        <form action="orderan"method="post">
+            <i class="fa-solid fa-magnifying-glass"id="logo-cari"></i><input type="text"name="cari"placeholder="Pencarian"autofocus id="pencarian"><input type="submit"id="submit">
+        </form>
+        <?php include "pencarian/cari.php"?>
+    </div>
+    <nav>
+        <table>
             <div class="isi">
                 <tr id="atas">
-                    <th>No</th>
-                    <th>Tanggal</th>
-                    <th id="deskripsi">Deskripsi</th>
-                    <th style="padding-left: 10px;">Transaksi</th>
-                    <th>Jumlah</th>
+                    <th width="40px">No</th>
+                    <th>ID User</th>
+                    <th>Nomor HP</th>
+                    <th width="130px">Tanggal<form action="" method="post"><button name="desc_tgl" style="float: right; margin-inline: 5px; margin-top: -20px;"><i class="fa-solid fa-angle-down"></i></button></form></th>
+                    <?php if  (isset($_POST['desc_tgl'])){
+                        $data = mysqli_query($koneksi,"SELECT * FROM `pesan` ORDER BY `pesan`.`tanggal` DESC");
+                    } ?>
+                    <th>Alamat</th>
+                    <th>ID Padi</th>
+                    <th>Nama Barang</th>
+                    <th>Harga Beli</th>
+                    <th>Metode Transaksi</th>
+                    <th>Jumlah Barang</th>
                     <th>Proses</th>
                     <th>Status</th>
                 </tr>
                 <?php
-                include "database/database.php";
-                $no=1;
-                foreach ($pesan as $row){ 
-                    ?>
+                    $no = 1;
+                    while($row = mysqli_fetch_array($data)) {
+                ?>
                     <tr id="bawah">
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $row->tanggal; ?></td>
-                        <td class="deskripsi"><?php echo $row->deskripsi; ?></td>
-                        <td style="padding-left: 10px;"><?php echo $row->transaksi; ?></td>
-                        <td><?php echo $row->jumlah; ?></td>
+                        <td>U<?php echo $row['id_user']; ?></td>
+                        <td><?php echo $row['nomorhp']; ?></td>
+                        <td><?php echo $row['tanggal']; ?></td>
+                        <td class="alamat" style="padding-block: 10px;"><?php echo $row['alamat']; ?></td>
+                        <td>P<?php echo $row['id_padi']; ?></td>
+                        <td><?php echo $row['deskripsi']; ?></td>
+                        <td><?php echo $row['harga_beli']; ?></td>
+                        <td><?php echo $row['transaksi']; ?></td>
+                        <td style="border-left: 1px solid;"><?php echo $row['jumlah']; ?></td>
                         <td>
                             <form action="<?php echo base_url(). 'pesan/tambah_proses'; ?>" method="post">
+                                <input type="hidden" name="id_pesan" value="<?php echo $row['id_pesan']; ?>">
                                 <input type="submit" name="proses" value="packing" id="proses">
                             </form>
                         </td>
-                        <td><?php echo $row->proses; ?></td>
+                        <td><?php echo $row['proses']; ?></td>
                     </tr>
                 <?php 
                 }
                 ?>
             </div>
         </table>
-    </div>
+    </nav>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            // Memeriksa apakah tombol Backspace atau Esc ditekan
+            if (event.key === 'Escape') {
+                event.preventDefault(); // Mencegah perilaku default
+                window.history.back(); // Kembali ke halaman sebelumnya
+            }
+        });
+    </script>
 </body>
 </html>

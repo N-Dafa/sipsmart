@@ -1,3 +1,7 @@
+<?php
+include "database/database.php";
+if ($_SESSION["back"] == 0){header("location:http://localhost/sipsmart");}
+?>
 <!DOCTYPE html>
 <html>
 

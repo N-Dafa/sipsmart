@@ -42,8 +42,9 @@ table {
             <th id="atas-table">Tanggal</th>
             <th id="atas-table">Jenis Padi</th>
             <th id="atas-table">Hasil Panen</th>
-            <th id="atas-table">Hari</th>
-            <th id="atas-table">Berat</th>
+            <th id="atas-table">Jumlah Hari</th>
+            <th id="atas-table">Berat per Karung</th>
+            <th id="atas-table">Total Berat</th>
         </tr>
     </thead>
     <tbody>
@@ -57,6 +58,7 @@ table {
                 <td><?php echo $row->hasil_panen; ?> Karung</td>
                 <td><?php echo $row->hari; ?> Hari</td>
                 <td><?php echo $row->berat; ?> Kg</td>
+                <td><?php echo $row->berat * $row->hasil_panen; ?> Kg</td>
             </tr>
         <?php } ?>
     </tbody>

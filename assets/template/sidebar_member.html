@@ -1,0 +1,62 @@
+<input type="checkbox" id="check">
+<label for="check" class="llabel">
+    <div class="batal" id="btn"><i class="fa-solid fa-bars" id="garisbar"></i><i class="fa-solid fa-caret-down"id="arrow"></i></div>
+    <div class="a3" id="cancel"></div>
+</label>
+<div class="sidebar">
+    <div class="user">
+        <?php
+        include "database/database.php";
+        $nama = $_SESSION['id'];
+        if ($nama == ""){header("location:http://localhost/sipsmart/login");}
+        elseif($nama=="44441"){
+            $query = mysqli_query($koneksi, "SELECT * FROM dt_admin WHERE id='$nama'");
+            $data = mysqli_fetch_array($query);
+            echo "<div class='nama'>";
+            echo "Admin";
+            echo "</div>";
+            echo "<i class='fa-solid fa-star'></i>";
+            echo "<div class='id'>";
+            echo "********";
+            echo "</div><br>";
+        }
+        elseif($nama=="admin"){
+            $query = mysqli_query($koneksi, "SELECT * FROM dt_admin WHERE id='$nama'");
+            $data = mysqli_fetch_array($query);
+            echo "<div class='nama'>";
+            echo "Admin";
+            echo "</div>";
+            echo "<i class='fa-solid fa-star'></i>";
+            echo "<div class='id'>";
+            echo "********";
+            echo "</div><br>";
+        }
+        else {
+            $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$nama'");
+            $data = mysqli_fetch_array($query);
+            echo "<div class='nama'>";
+            echo "$data[nama]";
+            echo "</div>";
+            echo "<i class='fa-solid fa-circle-user'></i>";
+            echo "<div class='id'>";
+            echo $_SESSION['id'];
+            echo "</div><br>";
+        }
+        ?>
+    </div>
+    <ul>
+        <li id="b1"><a href="user">Beranda</a></li>
+        <li id="b2"><a href="hasilpanen_user">Hasil Panen</a></li>
+        <li id="b3"><a href="hasilpadi_user">Jual Beli Padi</a></li>
+        <li id="b4"><a href="contact_user">Kontak</a></li>
+        <li id="li-logout"><button onclick="btn()" id="logout"><i class="fa-solid fa-door-closed"></i><i class="fa-solid fa-door-open"></i>LOG OUT</button></li>
+    </ul>
+    <div class="sidebar-bg"></div>
+</div>
+<script>
+    function btn(){
+        if (confirm('Yakin Log Out?')) {
+            window.location.href = "http://localhost/sipsmart/";
+        }
+    }
+</script>

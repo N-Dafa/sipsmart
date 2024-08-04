@@ -21,140 +21,139 @@ body{
     text-transform: uppercase;
     padding-left: 100px;
 }
+.pemanis{
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 /* ======================================= */
-.deskripsi,
-.alamat{
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
+.s1, .isi{
+    margin-inline: 10%;
 }
 .border-tambah{
-    box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.197);
-    border-radius: 10px;
-    pointer-events: none;
     background-color: #fff;
     position: relative;
-    height: 700px;
     width: 190px;
-    margin-left: 10%;
+    height: 700px;
     float: left;
     align-items: center;
     margin-right: 30px;
-    z-index: -2;
+    z-index: -1;
+    a{
+        color: #000000;
+    }
 }
+
+
 .order-masuk{
-    pointer-events: all;
+    padding: 10px 0px;
     border-radius: 7px;
-    width: 150px;
-    height: 70px;
     align-items: center;
     justify-content: center;
     display: grid;
     margin-inline: 20px;
+    i{
+        font-size: 35px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    p{
+        width: max-content;
+        height: max-content;
+        padding: 5px 5px;
+        margin: -30px -35px 0px 0px;
+        background-color: rgb(203, 52, 52);
+        border-radius: 7px;
+        font-size: 10px;
+        color: #fff;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .orderan{
+        text-align: center;
+    }
 }
 .order-masuk:hover{
-    box-shadow: 0px 0px 20px rgb(79, 79, 79, 0.312);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-.order-masuk .orderan{
-    letter-spacing: 1px;
-}
-.order-masuk i{
-    width: 50px;
-    height: 50px;
-    font-size: 35px;
-    float: right;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-.order-masuk i p{
-    width: 30px;
-    height: 30px;
-    background-color: rgb(203, 52, 52);
-    border-radius: 50%;
-    font-size: 15px;
-    margin: 0px 0px 30px 30px;
-    float: right;
-    color: #fff;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-.table{
-    margin-left: 11%;
-}
+
+
 .isitable{
     float: left;
     box-shadow: 0px 0px 20px rgba(79, 79, 79, 0.312);
     position: relative;
-    width: 210px;
-    height: 360px;
-    margin-right: 30px;
-    margin-bottom: 30px;
+    width: 195px;
+    height: 330px;
+    margin: 0px 10px 20px 10px;
     justify-content: center;
     display: grid;
     z-index: 0;
     background-color: #fff;
     border-radius: 10px;
     font-size: 14px;
+    img{
+        width: 195px;
+        height: 185px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.179);
+    }
+    .deskripsi,
+    .alamat{
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .deskripsi{
+        font-size: 17px;
+        margin-top: 5px;
+        margin-inline: 10px;
+    }
+    .tanggal{
+        margin-top: 5px;
+        padding-inline: 10px;
+    }
+    .isitable 
+    .deskripsi,
+    .alamat,
+    .harga{
+        margin-top: 5px;
+        padding-inline: 10px;
+    }
+    .harga{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .hapus{
+        top: -5px;
+        right: 0;
+        position: absolute;
+        font-size: 20px;
+        padding: 0px;
+        margin-top: -10px;
+        margin-right: -14px;
+        background-color: #201c15;
+        color: #fff;
+        padding: 3px 7px;
+        border-radius: 20px;
+    }
+    .hapus:hover{
+        background-color: #ba4646;
+    }
+    .edit{
+        color: #000000;
+    }
 }
 .isitable:hover{
     box-shadow: 0px 0px 20px rgba(79, 79, 79, 0.645);
 }
-.isitable img{
-    width: 210px;
-    height: 200px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.179);
-}
-.deskripsi{
-    font-size: 17px;
-}
-.tanggal{
-    margin-top: 5px;
-    padding-inline: 10px;
-}
-.isitable .deskripsi,
-.alamat,
-.harga{
-    margin-top: 5px;
-    padding-inline: 10px;
-}
-.deskripsi{
-    margin-top: 10px;
-}
-.harga{
-    font-size: 16px;
-    font-weight: bold;
-}
-.isitable .hapus{
-    top: -5px;
-    right: 0;
-    position: absolute;
-    font-size: 20px;
-    padding: 0px;
-    margin-top: -10px;
-    margin-right: -14px;
-    background-color: #201c15;
-    color: #fff;
-    padding: 3px 7px;
-    border-radius: 20px;
-}
-.isitable .hapus:hover{
-    background-color: #ba4646;
-}
-.edit{
-    color: #000000;
-    padding-inline: 9px;
-    z-index: 0;
-}
 
-.tambah-tengah
-{
+/* input produk */
+.tambah-tengah{
     top: 0;
     left: 0;
     width: 100%;
@@ -165,6 +164,9 @@ body{
     display: flex;
     pointer-events: none;
     z-index: 3;
+    .text{
+        padding-left: 10px;
+    }
 }
 .input{
     background-color: #212529;
@@ -240,20 +242,6 @@ input{
     opacity: 1;
     transition: 0.5s;
 }
-.border-tambah{
-    box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.197);
-    border-radius: 10px;
-    pointer-events: none;
-    background-color: #fff;
-    position: relative;
-    height: 700px;
-    width: 190px;
-    margin-left: 10%;
-    float: left;
-    align-items: center;
-    margin-right: 30px;
-    z-index: -2;
-}
 #open{
     pointer-events: all;
     color: #000000;
@@ -292,23 +280,6 @@ input{
     opacity: 1;
     pointer-events:all;
 }
-.peopen{
-    display: flex;
-    margin: 0px 20px;
-    float: left;
-}
-.peopen input{
-    margin: 0;
-    height: 30px;
-    font-size: 13px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.peopen button{
-    width: 30px;
-    height: 30px;
-    font-size: 15px;
-}
 /* ======================================= */
 .wall{
     background: rgb(238, 238, 238);
@@ -332,6 +303,58 @@ input{
     position: relative;
     z-index: 100;
 }
-.text{
-    padding-left: 10px;
+
+/* pencarian */
+.body_cari
+{
+    margin-inline: 10%;
+}
+.body_cari{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    border-left: 20px solid rgb(148, 170, 236);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(86, 125, 244);
+    align-items: center;
+    margin-bottom: 20px;
+    width: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.292);
+}
+.body_cari h1{
+    right: 11%;
+    position: absolute;
+    font-size: 35px;
+    font-family: 'Doris', sans-serif;
+    color: white;
+    transition: all .4s ease;
+}
+.body_cari #logo-cari{
+    font-size: 23px;
+    color: rgb(124, 124, 124);
+    z-index: 1;
+    left: 35px;
+    position: relative;
+}
+.body_cari #pencarian{
+    background-color: rgba(255, 255, 255, 0.396);
+    width: auto;
+    font-size: 25px;
+    border: 0;
+    border-radius: 25px;
+    padding: 7px 10px 7px 60px;
+    transition: all .4s ease;
+    position: absolute;
+    margin-top: -38px;
+    left: 7%;
+}
+.body_cari #submit{
+    display: none;
+}
+@media (max-width: 950px){
+    .body_cari h1{
+        opacity: 0;
+        margin-right: 230px;
+    }
 }

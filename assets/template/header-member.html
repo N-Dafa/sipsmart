@@ -1,0 +1,16 @@
+<?php
+include "database/database.php";
+if ($_SESSION["back"] == 0){header("location:http://localhost/sipsmart");}
+?>
+<div class="head">
+    <div class="header">
+        <img src="assets/img/logo.png" alt="">
+        <a href="user"><h2>SIP Smart</h2></a>
+        <ul>
+            <li><a id="tombol" href="user">Beranda</a></li>
+            <li><a id="tombol" href="hasilpanen_user">Panen</a></li>
+            <li><a id="tombol" href="hasilpadi_user">Produk</a></li>
+        </ul>
+        <a id="back" href="#header"><i class="fa-solid fa-up-long"></i></a>
+    </div>
+</div>
