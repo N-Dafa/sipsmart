@@ -1,5 +1,5 @@
 # Profile
-Nama : Awang Dafa Faturiansyah
+Nama : Awang Dafa Faturiansyah<br>
 NIM  : 12210991
 
 Tugas Akhir<br> 
