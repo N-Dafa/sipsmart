@@ -1,7 +1,8 @@
 ###################
 What is CodeIgniter
 ###################
-https://github.com/N-Dafa/sipsmart?tab=readme-ov-file
+-  `README <https://github.com/N-Dafa/sipsmart?tab=readme-ov-file>`_
+
 
 ###################
 What is CodeIgniter
